@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Udemy Subtitle Color Changer",
+  "version": "1.0",
+  "description": "Altera a cor das legendas dos vídeos da Udemy.",
+  "content_scripts": [
+    {
+      "matches": ["https://www.udemy.com/course/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["activeTab"]
+}

@@ -1,13 +1,34 @@
 {
   "manifest_version": 3,
-  "name": "Udemy Subtitle Color Changer",
-  "version": "1.0",
-  "description": "Altera a cor das legendas dos vídeos da Udemy.",
+  "name": "Udemy CaptionCraft",
+  "version": "1.5",
+  "description": "Personalize e traduza as legendas da Udemy com estilo. Controle cor, tamanho, fundo, alinhamento e idioma.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://translate.googleapis.com/*"],
   "content_scripts": [
     {
-      "matches": ["https://www.udemy.com/course/*"],
-      "js": ["content.js"]
+      "matches": ["*://*.udemy.com/course/*", "*://*.udemy.com/lecture/*"],
+      "js": ["content.js"],
+      "css": []
     }
   ],
-  "permissions": ["activeTab"]
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["images/*.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
